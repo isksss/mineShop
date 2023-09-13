@@ -1,7 +1,6 @@
 package net.isksss.mc.mineshop.database;
 
 import net.isksss.mc.mineshop.config.Config;
-import org.bukkit.plugin.Plugin;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
