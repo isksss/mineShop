@@ -58,6 +58,6 @@ public class Add implements CommandExecutor {
 
 
         
-        return false;
+        return true;
     }
 }

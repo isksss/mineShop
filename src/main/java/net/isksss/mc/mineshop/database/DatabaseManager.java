@@ -18,6 +18,10 @@ public class DatabaseManager {
         this.dbPath = "jdbc:sqlite:plugins/mineShop/"+dbName;
     }
 
+    public String getDbPath(){
+        return this.dbPath;
+    }
+
     public void InitDatabase(){
         // データベースの初期設定
 
