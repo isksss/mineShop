@@ -3,3 +3,8 @@ version: '${version}'
 main: net.isksss.mc.mineshop.MineShop
 api-version: '1.20'
 load: STARTUP
+
+commands:
+  shop:
+    description: shop
+    usage: /shop <sub command>

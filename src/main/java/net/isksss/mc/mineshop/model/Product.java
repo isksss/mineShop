@@ -3,15 +3,19 @@ package net.isksss.mc.mineshop.model;
 import org.bukkit.inventory.ItemStack;
 
 public class Product {
-    public Product(int chestId, int index, ItemStack item, int price) {
+    public Product(int chestId, int index, String item, int amount,int price) {
         this.chestId = chestId;
         this.index = index;
         this.item = item;
         this.price = price;
+        this.amount = amount;
     }
 
     private int chestId;
     private int index;
+    private String item;
+    private int amount;
+    private int price;
 
     public int getChestId() {
         return chestId;
@@ -29,11 +33,11 @@ public class Product {
         this.index = index;
     }
 
-    public ItemStack getItem() {
+    public String getItem() {
         return item;
     }
 
-    public void setItem(ItemStack item) {
+    public void setItem(String item) {
         this.item = item;
     }
 
@@ -45,6 +49,12 @@ public class Product {
         this.price = price;
     }
 
-    private ItemStack item;
-    private int price;
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
 }

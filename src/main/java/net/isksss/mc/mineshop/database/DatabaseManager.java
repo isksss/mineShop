@@ -37,10 +37,11 @@ public class DatabaseManager {
 
         String createProductTableSQL = "CREATE TABLE IF NOT EXISTS Product ("
                 + "chestId INTEGER,"
-                + "index INTEGER,"
-                + "item BLOB,"
+                + "c_index INTEGER,"
+                + "item TEXT,"
+                + "amount INTEGER"
                 + "price INTEGER,"
-                + "PRIMARY KEY (chestId, index)"
+                + "PRIMARY KEY (chestId, c_index)"
                 + ")";
 
         executeCreateStatement(createProductTableSQL);
