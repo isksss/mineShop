@@ -37,10 +37,15 @@ public class ClickItem implements Listener {
             e.setCancelled(true);
             int slotNo = e.getSlot();
             // hotbarを選択したときは無効にする
-            InventoryType.SlotType. slottype = e.getSlotType();
-            if(slottype == InventoryType.PLAYER){
+            InventoryType.SlotType slottype = e.getSlotType();
+            if(slottype == InventoryType.SlotType.QUICKBAR){
                 return;
             }
+            // クリックしたのが空気ブロックのときは無効にする
+            if(e.getCurrentItem().getType().isAir()){
+                return;
+            }
+            // 0番目のスロットは無効にする
             if(slotNo == 0){
                 return;
             }
@@ -48,7 +53,13 @@ public class ClickItem implements Listener {
 
             ItemStack item = e.getCurrentItem();
             ItemMeta meta = item.getItemMeta();
-            int price = Integer.parseInt(meta.getDisplayName());
+            int price = 0;
+            try{
+                price = Integer.parseInt(meta.getDisplayName());
+            }catch (NumberFormatException ex){
+                p.sendMessage("price error.");
+                return;
+            }
 
             if(exp >= price){
                 //購入
